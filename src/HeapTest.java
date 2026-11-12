@@ -11,14 +11,14 @@ public class HeapTest {
         heap.insert(8);
         heap.insert(1);
 
-        assertEquals(4, heap.getSize());
+        assertEquals(4, heap.size());
     }
 
     @Test
     public void testNoValues() {
         Heap heap = new Heap();
 
-        assertEquals(0, heap.getSize());
+        assertEquals(0, heap.size());
 
     }
 
