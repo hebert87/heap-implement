@@ -35,7 +35,7 @@ public class Heap {
         items.set(indexTwo, item);
 
     }
-    public void addingValue( int item){
+    public void insert( int item){
         items.add(item);
         int newValueIndex = items.size()-1;
         int parent = (newValueIndex-1) /2;
@@ -57,27 +57,27 @@ public class Heap {
         return items.get(0);
 
     }
-    public int getSize(){
+    public int size(){
         return items.size();
     }
 
-    public boolean  checkIfEmpty(){
+    public boolean isEmpty(){
         return items.isEmpty();
     }
 
-    public int popping(){
+    public int poll(){
         if(items.isEmpty()) throw new IllegalStateException();
         int rootItem = items.get(0);
         int lastElement = items.get(items.size()-1);
         items.set(0, lastElement);
         items.remove(items.size() -1);
 
-        int currentIdex = 0;
+        int currentIndex = 0;
         
 
         while(true){
-            int leftChild = 2 *currentIdex + 1;
-            int rightChild = 2 *currentIdex + 2;
+            int leftChild = 2 *currentIndex + 1;
+            int rightChild = 2 *currentIndex + 2;
 
             if (leftChild >= items.size()) {
                 break;
@@ -88,11 +88,11 @@ public class Heap {
             if (rightChild < items.size() && items.get(rightChild) < items.get(leftChild)) {
             smallerChild = rightChild;
         }
-            if (items.get(currentIdex) <= items.get(smallerChild)) {
+            if (items.get(currentIndex) <= items.get(smallerChild)) {
             break;
         }
-            swap(currentIdex, smallerChild);
-            currentIdex = smallerChild;
+            swap(currentIndex, smallerChild);
+            currentIndex = smallerChild;
         }
 
 
