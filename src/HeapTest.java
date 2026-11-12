@@ -3,22 +3,22 @@ import org.junit.Test;
 
 public class HeapTest {
     @Test
-    public void testAddingValues() {
+    public void testinserts() {
         Heap heap = new Heap();
 
-        heap.addingValue(5);
-        heap.addingValue(3);
-        heap.addingValue(8);
-        heap.addingValue(1);
+        heap.insert(5);
+        heap.insert(3);
+        heap.insert(8);
+        heap.insert(1);
 
-        assertEquals(4, heap.getSize());
+        assertEquals(4, heap.size());
     }
 
     @Test
     public void testNoValues() {
         Heap heap = new Heap();
 
-        assertEquals(0, heap.getSize());
+        assertEquals(0, heap.size());
 
     }
 
@@ -26,10 +26,10 @@ public class HeapTest {
     public void testPeek() {
     Heap heap = new Heap();
 
-    heap.addingValue(5);
-    heap.addingValue(3);
-    heap.addingValue(8);
-    heap.addingValue(1);
+    heap.insert(5);
+    heap.insert(3);
+    heap.insert(8);
+    heap.insert(1);
 
     assertEquals(1, heap.peek());
     }
@@ -38,15 +38,15 @@ public class HeapTest {
     public void testPopInOrder() {
         Heap heap = new Heap();
 
-        heap.addingValue(5);
-        heap.addingValue(3);
-        heap.addingValue(8);
-        heap.addingValue(1);
+        heap.insert(5);
+        heap.insert(3);
+        heap.insert(8);
+        heap.insert(1);
 
-        assertEquals(1, heap.popping());
-        assertEquals(3, heap.popping());
-        assertEquals(5, heap.popping());
-        assertEquals(8, heap.popping());
+        assertEquals(1, heap.poll());
+        assertEquals(3, heap.poll());
+        assertEquals(5, heap.poll());
+        assertEquals(8, heap.poll());
     }
 
 }
