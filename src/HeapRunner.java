@@ -41,34 +41,34 @@ public class HeapRunner {
                 }
  
                 // TODO: Call your "add" method on the heap, passing in 'value'.
-                heap.addingValue(value);                
+                heap.insert(value);                
                 // TODO: Print message letting user know value was added
                 System.out.println(value + " was added.");
  
             } else if (choice.equals("p") || choice.equals("pop")) {
                 // TODO: Call your "pop" method and print the result.
                 // Properly handle the case of an empty heap!
-                if (heap.checkIfEmpty()) {
+                if (heap.isEmpty()) {
                     System.out.println("There is nothing to remove.");
                 } else {
-                    System.out.println("Removed: " + heap.popping());
+                    System.out.println("Removed: " + heap.poll());
                 }
                 
             } else if (choice.equals("k") || choice.equals("peek")) {
                 // TODO: Call your "peek" method and print the result
                 // Properly handle the case of an empty heap!
-                if (heap.checkIfEmpty()) {
+                if (heap.isEmpty()) {
                     System.out.println("There is nothing to peek at.");
                 } else {
                     System.out.println("Smallest value: " + heap.peek());
                 }
             } else if (choice.equals("s") || choice.equals("size")) {
                 // TODO: Call your "size" method and print the result
-                System.out.println("Heap size: " + heap.getSize());
+                System.out.println("Heap size: " + heap.size());
 
             } else if (choice.equals("e") || choice.equals("empty")) {
                 // TODO: Call your "isEmpty" method and print the result
-                System.out.println("Is heap empty? " + heap.checkIfEmpty());
+                System.out.println("Is heap empty? " + heap.isEmpty());
 
             } else if (choice.equals("q") || choice.equals("quit")) {
                 break;
